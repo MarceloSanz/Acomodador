@@ -1,4 +1,4 @@
 package org.example.model;
 
-public class ButacaRepository {
+public class ButacaRepository implements IButacaRepository{
 }

@@ -9,10 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class Sala {
    private Butaca[][] butacas;
-   private int[][] butacasPuntuacion;
+   private Integer[][] butacasPuntuacion;
    public Sala(int filas, int columnas){
-      butacas = new Butaca[columnas][filas];
-      butacasPuntuacion = new int[columnas][filas];
+      butacas = new Butaca[filas][columnas];
+      butacasPuntuacion = new Integer[filas][columnas];
+      for (int i = 0; i < butacas.length; i++) {
+         for (int j = 0; j < butacas[i].length; j++) {
+            butacasPuntuacion[i][j] = 0;
+            butacas[i][j] = new Butaca();
+            butacas[i][j].setNumFila(i);
+         }
+      }
    }
 
    public Butaca[][] getButacas() {
@@ -23,11 +30,11 @@ public class Sala {
       this.butacas = butacas;
    }
 
-   public int[][] getButacasPuntuacion() {
+   public Integer[][] getButacasPuntuacion() {
       return butacasPuntuacion;
    }
 
-   public void setButacasPuntuacion(int[][] butacasPuntuacion) {
+   public void setButacasPuntuacion(Integer[][] butacasPuntuacion) {
       this.butacasPuntuacion = butacasPuntuacion;
    }
 }

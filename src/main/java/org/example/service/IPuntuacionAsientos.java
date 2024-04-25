@@ -3,8 +3,8 @@ package org.example.service;
 import org.example.model.Sala;
 
 public interface IPuntuacionAsientos {
-    int[][] asignarPuntuacionFilas(Sala sala);
-    int[][] asignarPuntuacionColumnas(Sala sala);
+    void asignarPuntuacionFilas(Sala sala);
+    void asignarPuntuacionColumnas(Sala sala);
 
     //Primero asignar puntuacion a las filas
     //Segundo puntuacion por columnas

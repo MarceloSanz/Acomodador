@@ -3,16 +3,16 @@ package org.example.model;
 import org.springframework.stereotype.Component;
 
 public enum ButacasEstado {
-    LIBRE('-'),
-    RESERVADO('*'),
-    OCUPADO('+');
-    private char estado;
+    LIBRE("-"),
+    RESERVADO("*"),
+    OCUPADO("+");
+    private String estado;
 
-    ButacasEstado(char estado) {
+    ButacasEstado(String estado) {
         this.estado = estado;
     }
 
-    public char getEstado() {
+    public String getEstado() {
         return estado;
     }
 }

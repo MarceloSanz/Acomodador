@@ -6,7 +6,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class PuntuarAsientos implements IPuntuacionAsientos{
     @Override
-    public int[][] asignarPuntuacionFilas(Sala sala) {
+    public void asignarPuntuacionFilas(Sala sala) {
+        for (int i = 0; i < sala.getButacas().length; i++) {
+            for (int j = 0; j < sala.getButacas()[i].length; j++) {
+                sala.getButacasPuntuacion()[i][j] += sala.getButacas().length-i;
+            }
+        }
+    }
+
+    @Override
+    public void asignarPuntuacionColumnas(Sala sala) {
         for (int i = 0; i < sala.getButacas().length; i++) {
             for (int j = 0; j < sala.getButacas()[i].length; j++) {
                 int centro = sala.getButacas()[i].length/2;
@@ -17,11 +26,5 @@ public class PuntuarAsientos implements IPuntuacionAsientos{
                 }
             }
         }
-        return new int[0][];
-    }
-
-    @Override
-    public int[][] asignarPuntuacionColumnas(Sala sala) {
-        return new int[0][];
     }
 }

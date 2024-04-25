@@ -26,7 +26,7 @@ public class SalaRepository implements ISalaRepository{
 
     @Override
     public Sala crearSala(int filas, int columnas) {
-        sala = new Sala(columnas, filas);
+        sala = new Sala(filas, columnas);
         return sala;
     }
 

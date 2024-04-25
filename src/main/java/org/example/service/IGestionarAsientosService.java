@@ -10,8 +10,7 @@ public interface IGestionarAsientosService {
     Sala solicitarButacas(int numeroButacas);
     Sala asignarButacas(Butaca[] butacas);
     Sala reservarButacas(Butaca[] butacas);
-    Sala mostrarSala();
-
+    void asignarNumeroButacas(Butaca[][] butacas);
 
 
 }
